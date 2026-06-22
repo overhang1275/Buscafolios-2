@@ -1,0 +1,16 @@
+resultados_busca_folios/
+busca_folios.log
+
+.venv/
+__pycache__/
+*.py[cod]
+
+build/
+dist/
+*.spec~
+
+.env
+*.env
+*.key
+*.pem
+
