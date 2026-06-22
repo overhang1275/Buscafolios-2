@@ -1,0 +1,18 @@
+[project]
+name = "busca-folios"
+version = "1.0.0"
+description = "Aplicacion de escritorio para buscar folios en archivos masivos con DuckDB."
+requires-python = ">=3.13"
+dependencies = [
+  "duckdb>=1.1.0",
+  "pandas>=2.2.0",
+  "PySide6>=6.8.0",
+  "openpyxl>=3.1.0",
+]
+
+[project.scripts]
+busca-folios = "busca_folios.app:main"
+
+[tool.ruff]
+line-length = 100
+

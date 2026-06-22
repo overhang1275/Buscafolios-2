@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+src/busca_folios/__init__.py
+src/busca_folios/app.py
+src/busca_folios/duckdb_engine.py
+src/busca_folios/main_window.py
+src/busca_folios/models.py
+src/busca_folios/worker.py
+src/busca_folios.egg-info/PKG-INFO
+src/busca_folios.egg-info/SOURCES.txt
+src/busca_folios.egg-info/dependency_links.txt
+src/busca_folios.egg-info/entry_points.txt
+src/busca_folios.egg-info/requires.txt
+src/busca_folios.egg-info/top_level.txt
+tests/test_engine_sql.py

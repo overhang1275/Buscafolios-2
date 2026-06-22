@@ -1,0 +1,2 @@
+[console_scripts]
+busca-folios = busca_folios.app:main
