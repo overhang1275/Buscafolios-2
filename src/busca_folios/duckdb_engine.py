@@ -76,7 +76,7 @@ def detect_columns(config: FileConfig) -> list[str]:
 def _copy_csv(con: duckdb.DuckDBPyConnection, query: str, output: Path) -> None:
     con.execute(
         f"COPY ({query}) TO {sql_literal(output)} "
-        "(HEADER, DELIMITER ',', QUOTE '\"', ESCAPE '\"')"
+        "(HEADER, DELIMITER '|', QUOTE '\"', ESCAPE '\"')"
     )
 
 
@@ -84,7 +84,9 @@ def export_csv_to_xlsx(csv_path: Path, xlsx_path: Path, sheet_prefix: str) -> No
     max_rows = 1_048_576
     chunk_rows = max_rows - 1
     with pd.ExcelWriter(xlsx_path, engine="openpyxl") as writer:
-        for index, chunk in enumerate(pd.read_csv(csv_path, chunksize=chunk_rows, dtype=str), start=1):
+        for index, chunk in enumerate(
+            pd.read_csv(csv_path, sep="|", chunksize=chunk_rows, dtype=str), start=1
+        ):
             chunk.to_excel(writer, index=False, sheet_name=f"{sheet_prefix}_{index}")
 
 
@@ -157,9 +159,11 @@ class FolioSearchEngine:
         _copy_csv(self.con, missing_query, missing_csv)
 
         progress(75, "Calculando resumen")
-        found = self.con.execute(f"SELECT count(*) FROM read_csv({sql_literal(found_csv)}, header=true)").fetchone()[0]
+        found = self.con.execute(
+            f"SELECT count(*) FROM read_csv({sql_literal(found_csv)}, header=true, delim='|')"
+        ).fetchone()[0]
         not_found = self.con.execute(
-            f"SELECT count(*) FROM read_csv({sql_literal(missing_csv)}, header=true)"
+            f"SELECT count(*) FROM read_csv({sql_literal(missing_csv)}, header=true, delim='|')"
         ).fetchone()[0]
         processed = self.con.execute(f"WITH production AS ({production_cte}) SELECT count(*) FROM production").fetchone()[0]
 

@@ -4,3 +4,5 @@
 2026-06-22 08:58:41,359 INFO busca_folios.duckdb_engine: Writing missing rows to C:\Users\AnthonyTepach\OneDrive - Computer Forms\Documentos\Buscafolios 2\resultados_busca_folios\no_encontrados.csv
 2026-06-22 09:05:31,823 INFO busca_folios.duckdb_engine: Writing found rows to C:\Users\AnthonyTepach\OneDrive - Computer Forms\Documentos\Buscafolios 2\resultados_busca_folios\2026-06-22_09-05-31_lote_001\encontrados.csv
 2026-06-22 09:05:36,289 INFO busca_folios.duckdb_engine: Writing missing rows to C:\Users\AnthonyTepach\OneDrive - Computer Forms\Documentos\Buscafolios 2\resultados_busca_folios\2026-06-22_09-05-31_lote_001\no_encontrados.csv
+2026-06-22 10:00:44,796 INFO busca_folios.duckdb_engine: Writing found rows to C:\Users\AnthonyTepach\OneDrive - Computer Forms\Documentos\Buscafolios 2\resultados_busca_folios\2026-06-22_10-00-44_lote_001\encontrados.csv
+2026-06-22 10:00:49,670 INFO busca_folios.duckdb_engine: Writing missing rows to C:\Users\AnthonyTepach\OneDrive - Computer Forms\Documentos\Buscafolios 2\resultados_busca_folios\2026-06-22_10-00-44_lote_001\no_encontrados.csv
